@@ -31,6 +31,7 @@ RUN set -e; \
 # Install Python and dependencies
 ENV PYTHONUNBUFFERED=1
 COPY requirements.txt ./requirements.txt
+RUN apk add py3-pip
 RUN apk add python3-dev \
   && pip3 --trusted-host pypi.org --trusted-host files.pythonhosted.org install -r requirements.txt
 
